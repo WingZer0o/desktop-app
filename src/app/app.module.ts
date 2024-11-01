@@ -18,6 +18,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { RouterModule } from '@angular/router';
 
 // AoT requires an exported function for factories
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>
@@ -30,6 +31,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>
     FormsModule,
     CoreModule,
     SharedModule,
+    RouterModule,
     AppRoutingModule,
     NavbarComponent,
     TranslateModule.forRoot({

@@ -4,6 +4,10 @@ import { PageNotFoundComponent } from './shared/components';
 
 const routes: Routes = [
   {
+    path: 'home',
+    loadComponent: () => import('./pages/home/home.component').then((x) => x.HomeComponent),
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }
