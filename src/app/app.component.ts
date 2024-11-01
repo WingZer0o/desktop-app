@@ -1,13 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { ElectronService } from './core/services';
+import { MatSidenav } from '@angular/material/sidenav';
 import { TranslateService } from '@ngx-translate/core';
 import { APP_CONFIG } from '../environments/environment';
-import { MatSidenav } from '@angular/material/sidenav';
+import { ElectronService } from './core/services';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   @ViewChild('sidenav')
@@ -34,7 +34,7 @@ export class AppComponent {
 
   public handleToggleSideNav(): void {
     console.log('welcome home');
-    (!this.sideNavOpen) ? this.sidenav.open() : this.sidenav.close();
+    !this.sideNavOpen ? this.sidenav.open() : this.sidenav.close();
     this.sideNavOpen = !this.sideNavOpen;
   }
 }
