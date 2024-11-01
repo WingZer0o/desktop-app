@@ -1,14 +1,7 @@
 <app-navbar (toggleSideNavEmitter)="handleToggleSideNav()"></app-navbar>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav>
-    <mat-nav-list>
-      <mat-list-item routerLink="/home" routerLinkActiveOptions="{ exact: true }">
-        <a matListItemTitle> Home </a>
-        <button mat-icon-button matListItemMeta>
-          <mat-icon>home</mat-icon>
-        </button>
-      </mat-list-item>
-    </mat-nav-list>
+    <app-side-bar-nav-list></app-side-bar-nav-list>
   </mat-sidenav>
   <section>
     <router-outlet></router-outlet>

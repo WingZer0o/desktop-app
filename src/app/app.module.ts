@@ -1,24 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import {
   HttpClient,
-  withInterceptorsFromDi,
   provideHttpClient,
+  withInterceptorsFromDi,
 } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
 
 // NG Translate
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { SideBarNavListComponent } from './shared/components/side-bar-nav-list/side-bar-nav-list.component';
 
 // AoT requires an exported function for factories
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>
@@ -34,6 +35,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>
     RouterModule,
     AppRoutingModule,
     NavbarComponent,
+    SideBarNavListComponent,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -41,6 +43,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>
         deps: [HttpClient],
       },
     }),
+    SideBarNavListComponent,
   ],
   providers: [
     provideAnimationsAsync(),
