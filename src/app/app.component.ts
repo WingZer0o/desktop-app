@@ -33,7 +33,6 @@ export class AppComponent {
   }
 
   public handleToggleSideNav(): void {
-    console.log('welcome home');
     !this.sideNavOpen ? this.sidenav.open() : this.sidenav.close();
     this.sideNavOpen = !this.sideNavOpen;
   }

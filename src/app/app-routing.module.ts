@@ -14,6 +14,11 @@ const routes: Routes = [
       import('./pages/home/home.component').then((x) => x.HomeComponent),
   },
   {
+    path: 'chat',
+    loadComponent: () =>
+      import('./pages/chat/chat.component').then((x) => x.ChatComponent),
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
   },
